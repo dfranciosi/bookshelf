@@ -1,0 +1,17 @@
+<% unless params.valid? %>
+  <p>Ouch!</p>
+  <% params.error_messages.each do |msg| %>
+    <%= msg %>
+  <% end %>
+<% end %>
+
+<%=
+  form_for :book, '/books' do
+		div do
+    	text_field :title
+		end
+		div do
+    	submit "Create"
+		end
+  end
+%>

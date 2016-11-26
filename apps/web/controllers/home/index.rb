@@ -1,10 +1,10 @@
 module Web::Controllers::Home
   class Index
     include Web::Action
-    expose :greet
+    expose :books
 
     def call(params)
-      @greet = 'Hello, again'
+      @books = BookRepository.new.all
     end
   end
 end
